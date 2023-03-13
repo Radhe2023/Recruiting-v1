@@ -57,6 +57,7 @@ export class LocComponent implements OnInit {
     });
   }
 
+  
   editData(data: any) {
     this.updateData = true;
     this.name = data.name;
