@@ -1,25 +1,54 @@
-<input type="text" placeholder="Name">
-<input type="text" placeholder="Location">
-<input type="text" placeholder="Visa Status">
-<input type="number" placeholder="Contact number">
-<input type="email" placeholder="Email">
-<input type="text" placeholder="Password">
-<input type="date" placeholder="Profile start Date">
-<input type="text" placeholder="Progress">
-<input type="text" placeholder="Remarks"><br><br>
-<button type="submit">Submit</button>
-<br><br>
-<table>
-    <tr>
-        <th>Index</th>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Visa Status</th>
-        <th>Contact Number</th>
-        <th>Email id</th>
-        <th>Password</th>
-        <th>Profile Start Date</th>
-        <th>Progress</th>
-        <th>Remarks</th>
-    </tr>
-</table>
+<div class="container-fluid">
+    <div class="container">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Start Date</th>
+                <th>City</th>
+                <th>DL</th>
+                <th> visa Status</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Contact</th>
+                <th>Progress</th>
+                <th>Remark</th>
+                <th>Action</th>
+            </tr>
+            <tr class="myStyle">
+                <!-- <th>{{posts.length+1}}</th> -->
+                <th><input type="text" name="name" [(ngModel)]="name" required ngModel /></th>
+                <th><input type="text" name="startDate" [(ngModel)]="startdate" required ngModel /></th>
+                <th><input type="text" name="City" [(ngModel)]="City" required ngModel /></th>
+                <th><input type="text" name="dL" [(ngModel)]="dl" required ngModel /></th>
+                <th><input type="text" name="visastatus" [(ngModel)]="visastatus" required ngModel /></th>
+                <th><input type="email" name="email" [(ngModel)]="email" required ngModel /></th>
+                <th><input type="text" name="password" [(ngModel)]="password" required ngModel /></th>
+                <th><input type="text" name="contact" [(ngModel)]="contact" required ngModel /></th>
+                <th><input type="text" name="progress" [(ngModel)]="progress" required ngModel /></th>
+                <th><input type="text" name="remark" [(ngModel)]="remark" required ngModel /></th>
+                <th>
+                    <button *ngIf="updateData == false" class="btnStyle1" (click)="SendFormData()">Add</button>
+                    <div *ngIf="updateData == true" class="btnStyle2">
+                        <button (click)="modifyData()">Update</button>
+                        <button (click)="cancelData()">Cancel</button>
+                    </div>
+                </th>
+            </tr>
+            <tr *ngFor="let post of posts">
+                <td>{{post.name}}</td>
+                <td>{{post.startdate}}</td>
+                <td>{{post.City}}</td>
+                <td>{{post.dl}}</td>
+                <td>{{post.visastatus}}</td>
+                <td>{{post.password}}</td>
+                <td>{{post.contact}}</td>
+                <td>{{post.email}}</td>
+                <td>{{post.progress}}</td>
+                <td>{{post.remark}}</td>
+                <td class="buttoncrud "><button class="btn btn-danger" (click)="editData(post)">Edit</button><button
+                        class="btn btn-danger" (click)="deleteData(post)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+

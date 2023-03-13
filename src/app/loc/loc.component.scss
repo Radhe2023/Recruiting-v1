@@ -1,5 +1,22 @@
-table, tr, td, th{
+tr,td,th{
     border: 1px solid black;
     border-collapse: collapse;
-    padding: 2px;
+    padding: 14px;
 }
+.myStyle{
+background-color: rgb(50, 27, 100);
+}
+th{
+    padding: 20px;
+    background-color: brown;
+}
+td{
+   background-color: rgb(48, 113, 65);
+   color: whitesmoke;
+}
+.buttoncrud{
+    padding: 20px;
+}
+ .buttoncrud button{
+    background-color: blue;
+} 
