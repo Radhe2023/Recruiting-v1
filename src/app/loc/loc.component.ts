@@ -13,6 +13,7 @@ export class LocComponent implements OnInit {
   City = "";
   dl = "";
   visastatus = "";
+  
   email = "";
   password = "";
   contact = "";
