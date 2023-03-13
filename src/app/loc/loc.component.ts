@@ -56,8 +56,7 @@ export class LocComponent implements OnInit {
       this.clearFormData();
     });
   }
-
-  
+ 
   editData(data: any) {
     this.updateData = true;
     this.name = data.name;
